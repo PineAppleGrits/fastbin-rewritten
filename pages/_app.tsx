@@ -57,13 +57,13 @@ const Fastbin = ({ Component, pageProps }) => {
       <Component {...pageProps} />
 
       <Head>
-        <title>fastbin</title>
+        <title>Paste</title>
         <meta name="charset" content="utf-8" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <meta name="title" content="fastbin" />
-        <meta name="description" content="free, fast, and easy pastebin service" />
+        <meta name="title" content="Paste" />
+        <meta name="description" content="free, fast, and easy pastebin service hosted by Grits!" />
       </Head>
     </GeistProvider>
   );

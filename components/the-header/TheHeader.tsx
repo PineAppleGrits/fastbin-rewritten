@@ -62,7 +62,7 @@ const TheHeader = ({
     <header className={headerClasses}>
       <Row align="middle" justify="space-between" style={{ height: '65px' }}>
         <Col style={{ width: 'auto' }} className={css.sitename}>
-          <h1>fastbin<sup><small><strong>v2</strong></small></sup></h1>
+          <h1>PasteCode<sup><small><strong>v1</strong></small></sup></h1>
         </Col>
 
         <Col className={css.navigationWrapper}>
