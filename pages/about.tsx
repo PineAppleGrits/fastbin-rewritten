@@ -21,11 +21,6 @@ export async function getStaticProps(ctx) {
     encoding: 'utf8'
   });
 
-  readme = readme.replace(
-    '<a href="https://vercel.com/new/project?template=jozsefsallai/fastbin-rewritten"><img width="128" src="https://vercel.com/button" alt="One-click Deployment" /></a>',
-    'https://vercel.com/new/project?template=jozsefsallai/fastbin-rewritten'
-  );
-
   return {
     props: {
       readme

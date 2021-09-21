@@ -3,11 +3,9 @@ import Editor from '@/components/editor/Editor';
 
 const ERROR_PAGE = `# Error 500
 
-Something bad happened on the server side. This might be a temporary issue, so
-please try checking back later. If the problem persists, please report the it in
-the project's issue tracker:
+Something bad happened on the server side. Please check out the site later! If not, contact me!
 
-https://github.com/jozsefsallai/fastbin-rewritten/issues
+https://discord.grits.tech/
 `;
 
 const InternalServerError = () => {
