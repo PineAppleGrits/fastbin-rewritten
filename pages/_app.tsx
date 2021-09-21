@@ -23,7 +23,6 @@ const Fastbin = ({ Component, pageProps }) => {
             instance.editor.defineTheme('monokai', data);
             instance.editor.setTheme('monokai')
         })
-
         instance.languages.register({ id: 'tsc' });
         instance.languages.setMonarchTokensProvider('tsc', {
           tokenizer: {
