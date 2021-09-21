@@ -15,14 +15,15 @@ const Fastbin = ({ Component, pageProps }) => {
   useEffect(() => {
     globalKeyBind(Mousetrap);
     Mousetrap.bindGlobal('ctrl+i', () => router.push('/'));
-    import('@/styles/themes/Monokai.json')
-  .then(data => {
-      monaco.editor.defineTheme('monokai', data);
-  
-      monaco.editor.setTheme('monokai')
-  })
+
     monaco.init()
       .then(instance => {
+        import('@/styles/themes/Monokai.json')
+        .then(data => {
+            instance.editor.defineTheme('monokai', data);
+            instance.editor.setTheme('monokai')
+        })
+
         instance.languages.register({ id: 'tsc' });
         instance.languages.setMonarchTokensProvider('tsc', {
           tokenizer: {
