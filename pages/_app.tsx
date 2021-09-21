@@ -18,7 +18,10 @@ const Fastbin = ({ Component, pageProps }) => {
 
     monaco.init()
       .then(instance => {
-
+        import('@/styles/themes/Monokai.json')
+        .then(data => {
+            monaco.editor.defineTheme('monokai', data);
+        })
         instance.languages.register({ id: 'tsc' });
         instance.languages.setMonarchTokensProvider('tsc', {
           tokenizer: {

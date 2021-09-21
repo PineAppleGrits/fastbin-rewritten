@@ -15,18 +15,14 @@ const Editor = ({ contents, readOnly, language, setContents }: EditorOpts) => {
     fontFamily: '"Fira Code", "Consolas", "Courier New", monospace',
     fontLigatures: true,
     lineHeight: 22,
-    readOnly,
-    theme: 'monokai'
+    readOnly
   };
 
   const [ isMobile, setIsMobile ] = useState(false);
 
   useEffect(() => {
     setIsMobile(checkMobile(window.navigator).any);
-    import('@/styles/themes/Monokai.json')
-    .then(data => {
-        monaco.editor.defineTheme('monokai', data);
-    })
+
   }, []);
 
   const handleEditorChange = setContents
@@ -48,7 +44,7 @@ const Editor = ({ contents, readOnly, language, setContents }: EditorOpts) => {
       language={language}
       value={contents}
       onChange={handleEditorChange}
-      theme="dark"
+      theme="monokai"
       wrapperClassName="editor"
       options={editorOptions}
     />
