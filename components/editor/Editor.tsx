@@ -1,4 +1,4 @@
-import { ControlledEditor } from '@monaco-editor/react';
+import { ControlledEditor, monaco } from '@monaco-editor/react';
 import checkMobile from 'ismobilejs';
 import { useState, useEffect } from 'react';
 import MobileEditor from './MobileEditor';
@@ -15,13 +15,18 @@ const Editor = ({ contents, readOnly, language, setContents }: EditorOpts) => {
     fontFamily: '"Fira Code", "Consolas", "Courier New", monospace',
     fontLigatures: true,
     lineHeight: 22,
-    readOnly
+    readOnly,
+    theme: 'monokai'
   };
 
   const [ isMobile, setIsMobile ] = useState(false);
 
   useEffect(() => {
     setIsMobile(checkMobile(window.navigator).any);
+    import('@/styles/themes/Monokai.json')
+    .then(data => {
+        monaco.editor.defineTheme('monokai', data);
+    })
   }, []);
 
   const handleEditorChange = setContents
