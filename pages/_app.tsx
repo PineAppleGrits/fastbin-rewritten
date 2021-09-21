@@ -1,5 +1,6 @@
 import { GeistProvider, CssBaseline } from '@geist-ui/react';
 import '@/styles/base.scss';
+
 import { useEffect } from 'react';
 import { monaco } from '@monaco-editor/react';
 import { useRouter } from 'next/router';
@@ -18,10 +19,6 @@ const Fastbin = ({ Component, pageProps }) => {
 
     monaco.init()
       .then(instance => {
-        import('@/styles/themes/Monokai.json')
-        .then(data => {
-            instance.editor.defineTheme('monokai', data);
-        })
         instance.languages.register({ id: 'tsc' });
         instance.languages.setMonarchTokensProvider('tsc', {
           tokenizer: {
@@ -40,6 +37,7 @@ const Fastbin = ({ Component, pageProps }) => {
             ]
           }
         });
+
         instance.languages.typescript.typescriptDefaults.setDiagnosticsOptions({
           noSemanticValidation: true,
           noSyntaxValidation: true,

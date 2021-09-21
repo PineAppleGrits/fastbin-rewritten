@@ -1,4 +1,4 @@
-import { ControlledEditor, monaco } from '@monaco-editor/react';
+import { ControlledEditor } from '@monaco-editor/react';
 import checkMobile from 'ismobilejs';
 import { useState, useEffect } from 'react';
 import MobileEditor from './MobileEditor';
@@ -22,7 +22,6 @@ const Editor = ({ contents, readOnly, language, setContents }: EditorOpts) => {
 
   useEffect(() => {
     setIsMobile(checkMobile(window.navigator).any);
-
   }, []);
 
   const handleEditorChange = setContents
@@ -44,7 +43,7 @@ const Editor = ({ contents, readOnly, language, setContents }: EditorOpts) => {
       language={language}
       value={contents}
       onChange={handleEditorChange}
-      theme="monokai"
+      theme="dark"
       wrapperClassName="editor"
       options={editorOptions}
     />
