@@ -1,6 +1,5 @@
 import { GeistProvider, CssBaseline } from '@geist-ui/react';
 import '@/styles/base.scss';
-import Theme from '@lib/'
 import { useEffect } from 'react';
 import { monaco } from '@monaco-editor/react';
 import { useRouter } from 'next/router';
@@ -16,7 +15,7 @@ const Fastbin = ({ Component, pageProps }) => {
   useEffect(() => {
     globalKeyBind(Mousetrap);
     Mousetrap.bindGlobal('ctrl+i', () => router.push('/'));
-    import('@lib/themes/Monokai.json')
+    import('@/styles/themes/Monokai.json')
   .then(data => {
       monaco.editor.defineTheme('monokai', data);
   
